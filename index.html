@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Q1;
+        document.write("<h3>Q1</h3>");
+
+        function date() {
+            let dateToday = new Date();
+            document.write(dateToday);
+        }
+
+        date();
+
+        //end;
+
+        //Q2;
+
+        function fullName() {
+            let firstName = prompt("What is your First Name?");
+            let lastName = prompt("What is your Last Name?");
+            alert("Hi " + firstName + " " + lastName);
+        }
+
+        fullName();
+
+        //end;
+
+        //Q3;
+
+        function add() {
+            let num1 = +prompt("Enter 1st number");
+            let num2 = +prompt("Enter 2nd number");
+            alert(num1 + num2);
+        }
+
+        add();
+
+        //end;
+
+
+        //Q4;
+
+        function calculator(num3, num4, operator) {
+            let result;
+
+            switch (operator) {
+                case "+":
+                    result = num3 + num4;
+                    break;
+                case "-":
+                    result = num3 - num4;
+                    break;
+                case "*":
+                    result = num3 * num4;
+                    break;
+                case "/":
+                    result = num3 / num4;
+                    break;
+                default:
+                    return "Invalid Operator";
+
+            }
+
+            return result;
+
+        }
+
+        let num3 = +prompt("Enter 1st num");
+        let num4 = +prompt("Enter 2nd num");
+        let operator = prompt("Enter any operator");
+
+        alert(calculator(num3, num4, operator));
+    
+
+        //end;
+
+
+
+        //Q5;
+        
+         function squares(num6){
+             return num6 * num6;
+        }
+ 
+    let num6 = +prompt("Enter any number to make a square of it");
+    let result1 = alert ("Square of " + num6 + " is " + squares(num6));
+ 
+    //end;
+    
+    
+
+        //Q6;
+
+        function factorial(num5){
+         if (num5 === 0 || num5 === 1 ){
+             return 1;
+             
+          }else{
+              return num5 * factorial( num5 - 1 );
+          }
+      }
+      
+      let num5 = +prompt("Enter any to number to calculate its factorial");
+      factorial(num5);
+      alert ("Factorial of " + num5 + " is " + factorial(num5));
+      
+      //end;
+      
+
+
+        //Q7;
+
+        document.write("<h3>Q7</h3>");
+        
+        function counting (startNum, endNum){
+            if (startNum <= endNum){
+                document.write (startNum + "<br>");
+                counting(startNum + 1, endNum)
+            }
+        }
+        
+        let startNum = +prompt ("Enter start number");
+        let endNum = +prompt ("Enter end number");
+         
+        counting(startNum, endNum);
+        
+        //end;
+        
+        
+
+        //Q8;
+
+        function calculateHypotneus(base, perpendicular){
+            function square (num6){
+                return num6 * num6;
+        
+            }
+        
+            let baseSquare = square(base);
+            let perpendicularSquare = square(perpendicular);
+        
+            let hypotneusSquare = baseSquare + perpendicularSquare;
+            let hypotneus = Math.sqrt(hypotneusSquare);
+            return hypotneus;
+        }  
+        
+        let base = +prompt("Enter base value to calculate its hypotneus");
+        let perpendicular = +prompt("Enter perpendicular value to calculate its hypotneus");
+        alert (calculateHypotneus(base, perpendicular));
+        
+        //end;
+        
+
+        //Q9;
+
+        function areaOfRectengular (width, height){
+            let area = width * height;
+            return area;
+        
+        }
+        
+        let width = +prompt("Enter width to calculate area");
+        let height = +prompt("Enter height to calculate area");
+        alert (areaOfRectengular(width, height));
+        
+        //end;
+        
+
+        //Q10;
+
+        function isPalindrome (str){
+            let strToLower = str.toLowerCase();
+            let reverseStr = strToLower.split("").reverse().join("");
+            if (strToLower === reverseStr){
+                return true;
+        
+            }else{
+                return false;
+        
+            }
+        }
+        
+        let str = prompt("Enter a word to check if it is a palindrome or not");
+        let palindromeCheck = isPalindrome(str);
+        alert (str + " is a palindrome: " + palindromeCheck);
+        
+        //end;
+        
+        
+
+        //Q11;
+
+        function toCapitalizeEachWord (str1){
+            let words = str1.split(" ");
+            for (let i = 0; i < words.length; i++){
+                let word = words[i];
+                let capitalize = word.charAt(0).toUpperCase() + word.slice(1);
+                words[i] = capitalize;
+            }
+        
+            let capitalizeStr = words.join(" ");
+            return capitalizeStr;
+        }
+        
+        let str1 = prompt("Enter any word or sentence to convert it in capital case");
+        alert (toCapitalizeEachWord(str1));
+         
+        //end;
+        
+
+        //Q12;
+
+        function toFindLongestWord(str2) {
+            words2 = str2.split(" ");
+
+            let longestWord = "";
+            let longestLength = 0;
+
+            for (let i = 0; i < words2.length; i++) {
+                let word = words2[i];
+                if (word.length > longestLength){
+                    longestWord = word;
+                    longestLength = word.length;
+                }
+            }
+            return longestWord;
+        }
+
+        let str2 = prompt ("Enter a sentence and i'll let you know which word is the bigger one");
+        alert (toFindLongestWord(str2) + ": is the longest word amongst all");
+
+        //end;
+
+        
+
+        //Q13;
+
+        function findOccurences(str3, letter){
+         let lowerStr3 = str3.toLowerCase();
+ 
+         let count = 0;
+ 
+         for (let i = 0; i < lowerStr3.length; i++){
+             if (lowerStr3[i] === letter){
+                 count++;
+ 
+             }
+             
+ 
+         }
+         return count;
+        }
+ 
+        let str3 = prompt("Enter a word");
+        let letter = prompt("Enter a letter to find its number of occurences");
+        alert (letter + " is coming " + findOccurences(str3, letter) + " times in this word " + str3);
+ 
+        //end;
+ 
+
+        //Q14;
+
+        function calcCircumference(radius) {
+        
+            var circumference = 2 * Math.PI * radius;
+            console.log("The circumference is " + circumference.toFixed(2));
+        }
+
+        function calcArea(radius) {
+            
+            var area = Math.PI * Math.pow(radius, 2);
+            console.log("The area is " + area.toFixed(2));
+        }
+
+        
+        var radius = 5;
+        calcCircumference(radius);
+        calcArea(radius);
+
+        //end;
+
+
+
+    </script>
+</body>
+
+</html>
